@@ -14,10 +14,8 @@ import java.util.Map;
  * least-recently-used entry sits just before the {@code tail} sentinel and is
  * the one evicted when the cache exceeds its capacity.
  *
- * <p>This implementation is <b>not</b> thread-safe. Wrap external access in
- * your own synchronization (e.g. {@code synchronized} blocks, or a
- * {@link java.util.concurrent.locks.ReentrantLock}) if used from multiple
- * threads.
+ * <p>All public methods are synchronized, making this implementation
+ * thread-safe for concurrent access.
  *
  * @param <K> the key type
  * @param <V> the value type
